@@ -86,7 +86,7 @@ pytest -q
 
 ### RAG pipeline
 
-The RAG component follows a typical four‑step workflow【190255345688846†L42-L56】:
+The RAG component follows a typical four‑step workflow:
 
 1. **Split the PDF into chunks** using a `RecursiveCharacterTextSplitter` to ensure that each chunk is of a manageable size.
 2. **Generate embeddings** for each chunk using `OpenAIEmbeddings` (or another embedding model) and store them in a Qdrant collectio.
