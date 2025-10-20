@@ -4,17 +4,17 @@ This project demonstrates how to build a simple agentic AI pipeline using **Lang
 
 ## Features
 
-1. **Agentic decision making** – The pipeline uses LangGraph to decide whether a user’s question is about the weather or about the contents of a PDF.  LangGraph acts as a conductor that directs the flow between multiple components and decides when to retrieve information and when to generate responses【161000022203502†L325-L337】.  Retrieval agents are useful when you want an LLM to decide whether to fetch context from a vector store or respond directly【295880776378341†L90-L103】.
+1. **Agentic decision making** – The pipeline uses LangGraph to decide whether a user’s question is about the weather or about the contents of a PDF.  LangGraph acts as a conductor that directs the flow between multiple components and decides when to retrieve information and when to generate responses.  Retrieval agents are useful when you want an LLM to decide whether to fetch context from a vector store or respond directly.
 
-2. **Retrieval‑Augmented Generation (RAG)** – The system implements the standard RAG workflow: split a document into manageable chunks, store their embeddings in a vector database (Qdrant), retrieve the most relevant chunks for a query and use them to answer the question【190255345688846†L42-L56】.  Qdrant provides efficient similarity search over dense vector embeddings【161000022203502†L325-L389】, and LangChain integrates seamlessly with Qdrant to create collections and perform similarity searches【375072805869932†L1257-L1290】.
+2. **Retrieval‑Augmented Generation (RAG)** – The system implements the standard RAG workflow: split a document into manageable chunks, store their embeddings in a vector database (Qdrant), retrieve the most relevant chunks for a query and use them to answer the question.  Qdrant provides efficient similarity search over dense vector embeddings, and LangChain integrates seamlessly with Qdrant to create collections and perform similarity searches.
 
-3. **Weather retrieval** – For weather‑related questions the pipeline calls the OpenWeatherMap API.  The API returns current weather data in JSON format and requires latitude, longitude and an API key【388494878568837†L75-L102】.  A simple extraction function tries to identify the city from the user question and fetches the current conditions.
+3. **Weather retrieval** – For weather‑related questions the pipeline calls the OpenWeatherMap API.  The API returns current weather data in JSON format and requires latitude, longitude and an API key.  A simple extraction function tries to identify the city from the user question and fetches the current conditions.
 
-4. **Embeddings and vector storage** – Embeddings are generated via `OpenAIEmbeddings` (you can switch to other providers) and stored in a local Qdrant collection.  The code demonstrates how to create an in‑memory or on‑disk collection, add documents and query them【375072805869932†L1257-L1289】.
+4. **Embeddings and vector storage** – Embeddings are generated via `OpenAIEmbeddings` (you can switch to other providers) and stored in a local Qdrant collection.  The code demonstrates how to create an in‑memory or on‑disk collection, add documents and query them.
 
-5. **LangSmith evaluation** – LangSmith can be used to trace and evaluate the LLM’s responses.  The `LangSmith` SDK’s `evaluate()` function allows you to score outputs against a labelled dataset【748276125314704†L100-L116】.  This repository includes example scaffolding to run evaluations and capture traces.
+5. **LangSmith evaluation** – LangSmith can be used to trace and evaluate the LLM’s responses.  The `LangSmith` SDK’s `evaluate()` function allows you to score outputs against a labelled dataset.  This repository includes example scaffolding to run evaluations and capture traces.
 
-6. **Streamlit UI** – A simple Streamlit front‑end demonstrates the application.  The UI captures user questions, displays chat history and streams responses.  The `st.chat_input()` and `st.chat_message()` functions make it easy to build chat applications【875021349489622†L1476-L1485】.
+6. **Streamlit UI** – A simple Streamlit front‑end demonstrates the application.  The UI captures user questions, displays chat history and streams responses.  The `st.chat_input()` and `st.chat_message()` functions make it easy to build chat applications.
 
 ## Folder structure
 
