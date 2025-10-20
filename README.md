@@ -84,6 +84,8 @@ pytest -q
 
 ## Implementation overview
 
+![langgraph-rag-weather-agent-Diagram](./images/Screenshot%202025-10-20%20214852.png)
+
 ### RAG pipeline
 
 The RAG component follows a typical four‑step workflow:
