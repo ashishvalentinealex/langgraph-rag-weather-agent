@@ -95,19 +95,19 @@ The RAG component follows a typical four‑step workflow【190255345688846†L42
 
 ### Decision node
 
-LangGraph is used to orchestrate the pipeline.  The `decision_node` calls a ChatOpenAI model to classify the user question.  If the model responds with “weather” the graph routes to the weather node; otherwise it routes to the RAG node.  LangGraph’s conditional edges allow the agent to decide which data source to use for each query【161000022203502†L325-L337】.
+LangGraph is used to orchestrate the pipeline.  The `decision_node` calls a ChatOpenAI model to classify the user question.  If the model responds with “weather” the graph routes to the weather node; otherwise it routes to the RAG node.  LangGraph’s conditional edges allow the agent to decide which data source to use for each query.
 
 ### Weather retrieval
 
-When the decision node selects the weather path, the `weather_node` extracts a city name from the question and queries the OpenWeatherMap API.  The API call requires latitude, longitude and an API key and returns the current weather conditions in JSON format【388494878568837†L75-L102】.  The response is summarised and returned as context for the final answer.
+When the decision node selects the weather path, the `weather_node` extracts a city name from the question and queries the OpenWeatherMap API.  The API call requires latitude, longitude and an API key and returns the current weather conditions in JSON format.  The response is summarised and returned as context for the final answer.
 
 ### Evaluation with LangSmith
 
-LangSmith provides tooling to trace and evaluate LLM applications.  The project includes an example script showing how to set up a dataset and run an evaluation using the `evaluate()` method【748276125314704†L100-L116】.  You can upload evaluation datasets, define evaluators and view experiment results in the LangSmith UI.
+LangSmith provides tooling to trace and evaluate LLM applications.  The project includes an example script showing how to set up a dataset and run an evaluation using the `evaluate()` method.  You can upload evaluation datasets, define evaluators and view experiment results in the LangSmith UI.
 
 ### Streamlit UI
 
-The Streamlit interface uses `st.chat_input()` to capture user input and `st.chat_message()` to display messages【875021349489622†L1476-L1485】.  Each time the user enters a question, the app invokes the LangGraph pipeline and displays the assistant’s response in a chat‑like format.
+The Streamlit interface uses `st.chat_input()` to capture user input and `st.chat_message()` to display messages.  Each time the user enters a question, the app invokes the LangGraph pipeline and displays the assistant’s response in a chat‑like format.
 
 ## Next steps
 
