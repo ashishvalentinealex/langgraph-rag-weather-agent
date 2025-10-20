@@ -88,10 +88,10 @@ pytest -q
 
 The RAG component follows a typical four‑step workflow【190255345688846†L42-L56】:
 
-1. **Split the PDF into chunks** using a `RecursiveCharacterTextSplitter` to ensure that each chunk is of a manageable size【190255345688846†L60-L100】.
-2. **Generate embeddings** for each chunk using `OpenAIEmbeddings` (or another embedding model) and store them in a Qdrant collection【190255345688846†L109-L123】.
-3. **Retrieve relevant chunks** from Qdrant via a similarity search based on the user’s query【190255345688846†L180-L189】.
-4. **Generate an answer** by feeding the retrieved context and the question into an LLM【190255345688846†L191-L216】.
+1. **Split the PDF into chunks** using a `RecursiveCharacterTextSplitter` to ensure that each chunk is of a manageable size.
+2. **Generate embeddings** for each chunk using `OpenAIEmbeddings` (or another embedding model) and store them in a Qdrant collectio.
+3. **Retrieve relevant chunks** from Qdrant via a similarity search based on the user’s query.
+4. **Generate an answer** by feeding the retrieved context and the question into an LLM.
 
 ### Decision node
 
